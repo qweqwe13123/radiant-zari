@@ -11,12 +11,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-end pb-16 md:pb-24 overflow-hidden">
-      {/* Full-screen static image — contain so the whole photo is visible */}
-      <div className="absolute inset-0 flex items-center justify-center bg-background/90">
+      {/* Full-screen static image */}
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={heroModel}
           alt="Элегантная исламская мода"
-          className="max-h-full max-w-full object-contain"
+          className={`w-full h-full object-cover transition-transform duration-[2500ms] ease-out ${
+            loaded ? "scale-100" : "scale-110"
+          }`}
         />
         {/* Vignette / readability overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
