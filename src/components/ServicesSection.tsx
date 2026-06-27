@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import serviceWardrobe from "@/assets/service-wardrobe.jpg";
 import serviceHijab from "@/assets/service-hijab.jpg";
 import serviceIstanbul from "@/assets/service-istanbul.jpg";
 import { useAnimatedReveal } from "@/hooks/useAnimatedReveal";
@@ -8,14 +7,13 @@ import { useTilt } from "@/hooks/useTilt";
 
 const services = [
   {
-    title: "Разбор гардероба",
-    subtitle: "Персональная консультация",
-    description: "Индивидуальный разбор вашего гардероба с рекомендациями по обновлению.",
-    image: serviceWardrobe,
-    price: "4 000 — 15 000 ₽",
-    tag: "КОНСУЛЬТАЦИЯ",
+    title: "Шоппинг-тур в Стамбул",
+    subtitle: "Со стилистом · 3–5 дней",
+    description: "Полноценный гардероб за несколько дней в Стамбуле: персональный шоппинг-лист, сопровождение и фотолокации.",
+    image: serviceIstanbul,
+    tag: "АВТОРСКИЙ ТУР",
     num: "01",
-    link: "/wardrobe",
+    link: "/istanbul",
   },
   {
     title: "Подбор хиджаба",
@@ -25,16 +23,6 @@ const services = [
     price: "4 990 ₽",
     tag: "ПОДБОР",
     num: "02",
-  },
-  {
-    title: "Шоппинг-тур в Стамбул",
-    subtitle: "Со стилистом · 3–5 дней",
-    description: "Полноценный гардероб за несколько дней в Стамбуле: персональный шоппинг-лист, сопровождение и фотолокации.",
-    image: serviceIstanbul,
-    price: "100 000 ₽",
-    tag: "АВТОРСКИЙ ТУР",
-    num: "03",
-    link: "/istanbul",
   },
 ];
 
@@ -107,7 +95,9 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
           {service.description}
         </p>
         <div className={`flex items-center gap-4 pt-4 ${index % 2 !== 0 ? "md:justify-end" : ""}`}>
-          <span className="font-display text-2xl font-bold text-foreground">{service.price}</span>
+          {(service as any).price && (
+            <span className="font-display text-2xl font-bold text-foreground">{(service as any).price}</span>
+          )}
           <div className="p-3 border border-border group-hover:border-gold group-hover:bg-gold group-hover:text-gold-foreground transition-all duration-500 group-hover:rotate-[360deg] group-hover:shadow-[0_8px_30px_hsl(var(--gold)/0.3)]">
             <ArrowUpRight size={18} />
           </div>

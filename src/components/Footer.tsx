@@ -34,7 +34,7 @@ const Footer = () => {
 
           {[
             { title: "Магазин", items: ["Хиджабы", "Абайи", "Аксессуары", "Новинки"] },
-            { title: "Услуги", items: ["Стайл-гайд", "Онлайн-курс", "Разбор гардероба", "Подбор хиджаба"] },
+            { title: "Услуги", items: ["Стайл-гайд", "Онлайн-курс", "Шоппинг-тур в Стамбул", "Подбор хиджаба"] },
             { title: "Поддержка", items: ["Доставка", "Возврат", "Контакты", "FAQ"] },
           ].map((col) => (
             <div key={col.title} className="space-y-4">
@@ -46,7 +46,7 @@ const Footer = () => {
                       href="#"
                       onClick={(e) => {
                         if (item === "Контакты") { e.preventDefault(); navigate("/contacts"); }
-                        else if (item === "Разбор гардероба") { e.preventDefault(); navigate("/wardrobe"); }
+                        else if (item === "Шоппинг-тур в Стамбул") { e.preventDefault(); navigate("/istanbul"); }
                       }}
                       className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-all duration-300 inline-block hover:translate-x-1"
                     >
