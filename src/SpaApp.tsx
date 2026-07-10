@@ -27,6 +27,7 @@ const SpaApp = () => (
           <Route path="/istanbul" element={<IstanbulPage />} />
           <Route path="/stylist" element={<StylistPage />} />
           <Route path="/wardrobe-capsule" element={<WardrobeCapsulePage />} />
+          <Route path="/wardrobe-pick" element={<WardrobePickPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
