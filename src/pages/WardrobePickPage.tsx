@@ -21,6 +21,7 @@ const WardrobePickPage = () => {
       pageIndex={1}
       totalPages={1}
     >
+      <Img src={capsuleCover.url} />
       <P>
         Готовый гардероб для покрытой женщины без лишних покупок и ежедневных сомнений «что надеть»
       </P>
