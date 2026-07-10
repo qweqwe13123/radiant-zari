@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import serviceHijab from "@/assets/wardrobe-capsule.png";
+import serviceHijab from "@/assets/wardrobe-capsule-looks.png";
 import serviceIstanbul from "@/assets/service-istanbul.jpg";
 import { useAnimatedReveal } from "@/hooks/useAnimatedReveal";
 import { useTilt } from "@/hooks/useTilt";
