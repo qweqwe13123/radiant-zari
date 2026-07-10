@@ -9,6 +9,7 @@ import AboutPage from "@/pages/AboutPage";
 import IstanbulPage from "@/pages/IstanbulPage";
 import StylistPage from "@/pages/StylistPage";
 import WardrobeCapsulePage from "@/pages/WardrobeCapsulePage";
+import WardrobePickPage from "@/pages/WardrobePickPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
