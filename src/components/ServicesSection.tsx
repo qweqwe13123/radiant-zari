@@ -19,7 +19,7 @@ const services = [
     title: "Подбор гардероба",
     subtitle: "Капсулы · онлайн",
     description: "Готовая капсула для покрытой женщины: сочетаемые вещи под ваш образ жизни, бюджет и особенности внешности.",
-    image: serviceHijab,
+    image: serviceHijab.url,
     tag: "КАПСУЛЫ",
     num: "02",
     link: "/wardrobe-pick",
