@@ -6,6 +6,7 @@ import g2 from "@/assets/istanbul/p2-bahtli-rev1.jpg";
 import g3 from "@/assets/istanbul/p2-guzel.jpg";
 import g4 from "@/assets/istanbul/p2-guzel-rev1.png";
 import g5 from "@/assets/istanbul/p2-zulya.jpg";
+import capsuleCover from "@/assets/wardrobe-bw-capsule.jpeg.asset.json";
 
 const WardrobePickPage = () => {
   useEffect(() => {
