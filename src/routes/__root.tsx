@@ -93,10 +93,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Персональный стилист для покрытых мусульманок. Шоппинг-туры в Стамбул, разбор гардероба, готовые капсулы и образы.",
+          "Launches and manages your projects with a streamlined interface.",
       },
       ...getSitePreviewMeta(),
       ...getSiteUrlMeta("/"),
+      { title: "za" },
+      { property: "og:title", content: "za" },
+      { name: "twitter:title", content: "za" },
+      { name: "description", content: "Launches and manages your projects with a streamlined interface." },
+      { name: "twitter:description", content: "Launches and manages your projects with a streamlined interface." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87ab7a80-e6f0-4f48-ab76-12a13a4312b3/id-preview-ee20fe8c--bccd08e7-21cb-4a2d-a2c0-9c7ecbb49153.lovable.app-1783720018183.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87ab7a80-e6f0-4f48-ab76-12a13a4312b3/id-preview-ee20fe8c--bccd08e7-21cb-4a2d-a2c0-9c7ecbb49153.lovable.app-1783720018183.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {

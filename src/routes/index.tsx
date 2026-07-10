@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Персональный стилист для покрытых мусульманок. Шоппинг-туры в Стамбул, разбор гардероба, готовые капсулы и образы.",
+          "Launches and manages your projects with a streamlined interface.",
       },
       ...getSitePreviewMeta(),
       ...getSiteUrlMeta("/"),
