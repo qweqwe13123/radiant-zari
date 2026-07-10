@@ -58,47 +58,49 @@ const NotionLayout = ({
             <span className="text-[13px] hidden sm:inline">На главную</span>
           </button>
 
-          {/* Indicators */}
-          <div className="flex items-center gap-1.5 mx-auto">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <span
-                key={i}
-                className="block rounded-full transition-all duration-500"
-                style={{
-                  width: i === pageIndex ? "22px" : "6px",
-                  height: "6px",
-                  backgroundColor:
-                    i === pageIndex ? "rgb(55, 53, 47)" : "rgba(55,53,47,0.22)",
-                }}
-              />
-            ))}
-          </div>
+          {totalPages > 1 && (
+            <div className="flex items-center gap-1.5 mx-auto">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <span
+                  key={i}
+                  className="block rounded-full transition-all duration-500"
+                  style={{
+                    width: i === pageIndex ? "22px" : "6px",
+                    height: "6px",
+                    backgroundColor:
+                      i === pageIndex ? "rgb(55, 53, 47)" : "rgba(55,53,47,0.22)",
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
-          {/* Prev / Next pill */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => prev && navigate(prev.to)}
-              disabled={!prev}
-              title={prev?.label || ""}
-              aria-label="Предыдущая"
-              className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full border transition-all hover:bg-black/5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
-              style={{ borderColor: "rgba(55,53,47,0.12)" }}
-            >
-              <ChevronLeft size={16} />
-              <span className="hidden sm:inline text-[12px]">Назад</span>
-            </button>
-            <button
-              onClick={() => next && navigate(next.to)}
-              disabled={!next}
-              title={next?.label || ""}
-              aria-label="Следующая"
-              className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed text-white"
-              style={{ backgroundColor: "rgb(55, 53, 47)" }}
-            >
-              <span className="hidden sm:inline text-[12px]">Дальше</span>
-              <ChevronRight size={16} />
-            </button>
-          </div>
+          {(prev || next) && (
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => prev && navigate(prev.to)}
+                disabled={!prev}
+                title={prev?.label || ""}
+                aria-label="Предыдущая"
+                className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full border transition-all hover:bg-black/5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+                style={{ borderColor: "rgba(55,53,47,0.12)" }}
+              >
+                <ChevronLeft size={16} />
+                <span className="hidden sm:inline text-[12px]">Назад</span>
+              </button>
+              <button
+                onClick={() => next && navigate(next.to)}
+                disabled={!next}
+                title={next?.label || ""}
+                aria-label="Следующая"
+                className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed text-white"
+                style={{ backgroundColor: "rgb(55, 53, 47)" }}
+              >
+                <span className="hidden sm:inline text-[12px]">Дальше</span>
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -145,43 +147,44 @@ const NotionLayout = ({
         {children}
       </article>
 
-      {/* Bottom clean arrow buttons */}
-      <div className="max-w-[720px] mx-auto px-4 sm:px-6 md:px-8 pb-16">
-        <div className="flex items-center justify-between">
-          {prev ? (
-            <Link
-              to={prev.to}
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:bg-black/[0.06] active:scale-95 border"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.7)",
-                borderColor: "rgba(55,53,47,0.12)",
-                color: "rgb(55, 53, 47)",
-              }}
-              aria-label="Назад"
-            >
-              <ChevronLeft size={18} />
-            </Link>
-          ) : (
-            <div className="w-10 h-10" />
-          )}
+      {(prev || next) && (
+        <div className="max-w-[720px] mx-auto px-4 sm:px-6 md:px-8 pb-16">
+          <div className="flex items-center justify-between">
+            {prev ? (
+              <Link
+                to={prev.to}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:bg-black/[0.06] active:scale-95 border"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  borderColor: "rgba(55,53,47,0.12)",
+                  color: "rgb(55, 53, 47)",
+                }}
+                aria-label="Назад"
+              >
+                <ChevronLeft size={18} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10" />
+            )}
 
-          {next ? (
-            <Link
-              to={next.to}
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all active:scale-95"
-              style={{
-                backgroundColor: "rgb(55, 53, 47)",
-                color: "#fff",
-              }}
-              aria-label="Дальше"
-            >
-              <ChevronRight size={18} />
-            </Link>
-          ) : (
-            <div className="w-10 h-10" />
-          )}
+            {next ? (
+              <Link
+                to={next.to}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all active:scale-95"
+                style={{
+                  backgroundColor: "rgb(55, 53, 47)",
+                  color: "#fff",
+                }}
+                aria-label="Дальше"
+              >
+                <ChevronRight size={18} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10" />
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
