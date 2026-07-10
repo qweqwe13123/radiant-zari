@@ -58,47 +58,49 @@ const NotionLayout = ({
             <span className="text-[13px] hidden sm:inline">На главную</span>
           </button>
 
-          {/* Indicators */}
-          <div className="flex items-center gap-1.5 mx-auto">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <span
-                key={i}
-                className="block rounded-full transition-all duration-500"
-                style={{
-                  width: i === pageIndex ? "22px" : "6px",
-                  height: "6px",
-                  backgroundColor:
-                    i === pageIndex ? "rgb(55, 53, 47)" : "rgba(55,53,47,0.22)",
-                }}
-              />
-            ))}
-          </div>
+          {totalPages > 1 && (
+            <div className="flex items-center gap-1.5 mx-auto">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <span
+                  key={i}
+                  className="block rounded-full transition-all duration-500"
+                  style={{
+                    width: i === pageIndex ? "22px" : "6px",
+                    height: "6px",
+                    backgroundColor:
+                      i === pageIndex ? "rgb(55, 53, 47)" : "rgba(55,53,47,0.22)",
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
-          {/* Prev / Next pill */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => prev && navigate(prev.to)}
-              disabled={!prev}
-              title={prev?.label || ""}
-              aria-label="Предыдущая"
-              className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full border transition-all hover:bg-black/5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
-              style={{ borderColor: "rgba(55,53,47,0.12)" }}
-            >
-              <ChevronLeft size={16} />
-              <span className="hidden sm:inline text-[12px]">Назад</span>
-            </button>
-            <button
-              onClick={() => next && navigate(next.to)}
-              disabled={!next}
-              title={next?.label || ""}
-              aria-label="Следующая"
-              className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed text-white"
-              style={{ backgroundColor: "rgb(55, 53, 47)" }}
-            >
-              <span className="hidden sm:inline text-[12px]">Дальше</span>
-              <ChevronRight size={16} />
-            </button>
-          </div>
+          {(prev || next) && (
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => prev && navigate(prev.to)}
+                disabled={!prev}
+                title={prev?.label || ""}
+                aria-label="Предыдущая"
+                className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full border transition-all hover:bg-black/5 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
+                style={{ borderColor: "rgba(55,53,47,0.12)" }}
+              >
+                <ChevronLeft size={16} />
+                <span className="hidden sm:inline text-[12px]">Назад</span>
+              </button>
+              <button
+                onClick={() => next && navigate(next.to)}
+                disabled={!next}
+                title={next?.label || ""}
+                aria-label="Следующая"
+                className="w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 flex items-center justify-center gap-1.5 rounded-full transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed text-white"
+                style={{ backgroundColor: "rgb(55, 53, 47)" }}
+              >
+                <span className="hidden sm:inline text-[12px]">Дальше</span>
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
