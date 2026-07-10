@@ -147,43 +147,44 @@ const NotionLayout = ({
         {children}
       </article>
 
-      {/* Bottom clean arrow buttons */}
-      <div className="max-w-[720px] mx-auto px-4 sm:px-6 md:px-8 pb-16">
-        <div className="flex items-center justify-between">
-          {prev ? (
-            <Link
-              to={prev.to}
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:bg-black/[0.06] active:scale-95 border"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.7)",
-                borderColor: "rgba(55,53,47,0.12)",
-                color: "rgb(55, 53, 47)",
-              }}
-              aria-label="Назад"
-            >
-              <ChevronLeft size={18} />
-            </Link>
-          ) : (
-            <div className="w-10 h-10" />
-          )}
+      {(prev || next) && (
+        <div className="max-w-[720px] mx-auto px-4 sm:px-6 md:px-8 pb-16">
+          <div className="flex items-center justify-between">
+            {prev ? (
+              <Link
+                to={prev.to}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:bg-black/[0.06] active:scale-95 border"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  borderColor: "rgba(55,53,47,0.12)",
+                  color: "rgb(55, 53, 47)",
+                }}
+                aria-label="Назад"
+              >
+                <ChevronLeft size={18} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10" />
+            )}
 
-          {next ? (
-            <Link
-              to={next.to}
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all active:scale-95"
-              style={{
-                backgroundColor: "rgb(55, 53, 47)",
-                color: "#fff",
-              }}
-              aria-label="Дальше"
-            >
-              <ChevronRight size={18} />
-            </Link>
-          ) : (
-            <div className="w-10 h-10" />
-          )}
+            {next ? (
+              <Link
+                to={next.to}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all active:scale-95"
+                style={{
+                  backgroundColor: "rgb(55, 53, 47)",
+                  color: "#fff",
+                }}
+                aria-label="Дальше"
+              >
+                <ChevronRight size={18} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10" />
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
