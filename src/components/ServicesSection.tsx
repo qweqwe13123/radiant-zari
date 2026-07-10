@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import serviceHijab from "@/assets/service-hijab.jpg";
+import serviceHijab from "@/assets/wardrobe-capsule.png.asset.json";
 import serviceIstanbul from "@/assets/service-istanbul.jpg";
 import { useAnimatedReveal } from "@/hooks/useAnimatedReveal";
 import { useTilt } from "@/hooks/useTilt";
@@ -19,7 +19,7 @@ const services = [
     title: "Подбор гардероба",
     subtitle: "Капсулы · онлайн",
     description: "Готовая капсула для покрытой женщины: сочетаемые вещи под ваш образ жизни, бюджет и особенности внешности.",
-    image: serviceHijab,
+    image: serviceHijab.url,
     tag: "КАПСУЛЫ",
     num: "02",
     link: "/wardrobe-pick",
