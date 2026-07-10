@@ -7,8 +7,8 @@ import {
   getSiteUrlMeta,
 } from "@/lib/site-meta";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
+export const Route = createFileRoute("/$")({
+  head: ({ match }) => ({
     meta: [
       { title: SITE_TITLE },
       {
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
           "Персональный стилист для покрытых мусульманок. Шоппинг-туры в Стамбул, разбор гардероба, готовые капсулы и образы.",
       },
       ...getSitePreviewMeta(),
-      ...getSiteUrlMeta("/"),
+      ...getSiteUrlMeta(match.pathname),
     ],
   }),
   component: ClientApp,
