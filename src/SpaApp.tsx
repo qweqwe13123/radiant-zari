@@ -9,6 +9,7 @@ import AboutPage from "@/pages/AboutPage";
 import IstanbulPage from "@/pages/IstanbulPage";
 import StylistPage from "@/pages/StylistPage";
 import WardrobeCapsulePage from "@/pages/WardrobeCapsulePage";
+import WardrobePickPage from "@/pages/WardrobePickPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const SpaApp = () => (
           <Route path="/istanbul" element={<IstanbulPage />} />
           <Route path="/stylist" element={<StylistPage />} />
           <Route path="/wardrobe-capsule" element={<WardrobeCapsulePage />} />
+          <Route path="/wardrobe-pick" element={<WardrobePickPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
