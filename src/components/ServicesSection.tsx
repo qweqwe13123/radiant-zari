@@ -22,7 +22,7 @@ const services = [
     image: serviceHijab,
     tag: "КАПСУЛЫ",
     num: "02",
-    link: "/wardrobe-capsule",
+    link: "/wardrobe-pick",
   },
 ];
 
