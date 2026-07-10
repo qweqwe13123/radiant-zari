@@ -18,8 +18,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: SITE_TITLE },
       {
         property: "og:description",
-        content:
-          "Launches and manages your projects with a streamlined interface.",
+        content: SITE_DESCRIPTION,
       },
       ...getSitePreviewMeta(),
       ...getSiteUrlMeta("/"),
